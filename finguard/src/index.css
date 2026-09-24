@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  --ink: #0b0b0c;
+  --ink-soft: #17171a;
+  --paper: #f6f3ee;
+  --smoke: #e8e4db;
+  --snow: #ffffff;
+  --signal: #ff4d1f;
+  --signal-dim: #d63e14;
+  --line: rgba(11, 11, 12, 0.12);
+  --line-dark: rgba(255, 255, 255, 0.14);
+
+  --font-display: 'Anton', sans-serif;
+  --font-body: 'Space Grotesk', sans-serif;
+
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.wrap {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+@media (max-width: 720px) {
+  .wrap {
+    padding: 0 22px;
+  }
+}
+
+/* ---- custom cursor ---- */
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
+
+.cursor-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--signal);
+}
+
+.cursor-ring {
+  width: 34px;
+  height: 34px;
+  border: 1.5px solid rgba(255, 77, 31, 0.55);
+  transition: width 0.25s ease, height 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.cursor-ring.is-active {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 77, 31, 0.1);
+  border-color: var(--signal);
+}
+
+@media (hover: none) {
+  .cursor-dot,
+  .cursor-ring {
+    display: none;
+  }
+}
+
+/* ---- reusable ---- */
+.eyebrow {
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  color: var(--signal);
+  font-weight: 600;
+  margin: 0 0 14px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 26px;
+  border-radius: 999px;
+  border: none;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 15px;
+  background: var(--signal);
+  color: var(--snow);
+}
+
+.btn.ghost {
+  background: transparent;
+  border: 1px solid var(--line-dark);
+  color: inherit;
+}
+
+.btn .arrow {
+  display: inline-flex;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+::selection {
+  background: var(--signal);
+  color: var(--snow);
+}

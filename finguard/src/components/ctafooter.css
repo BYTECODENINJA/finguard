@@ -1,0 +1,126 @@
+.cta-footer {
+  background: var(--signal);
+  color: var(--snow);
+  padding-top: 60px;
+  overflow: hidden;
+}
+
+.wordmark-wrap {
+  overflow: hidden;
+  padding: 20px 0 34px;
+}
+
+.wordmark {
+  position: relative;
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-transform: lowercase;
+  font-size: clamp(70px, 15vw, 200px);
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.wordmark__layer,
+.wordmark__front {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+.wordmark__front {
+  position: relative;
+  color: var(--ink);
+  background: linear-gradient(180deg, #2a2a2a 0%, var(--ink) 60%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 3px 0 rgba(255, 255, 255, 0.12));
+}
+
+.cta-footer__grid {
+  display: grid;
+  grid-template-columns: 1.3fr repeat(4, 0.7fr);
+  gap: 30px;
+  padding: 60px 0 50px;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  margin-top: 30px;
+}
+
+.cta-footer__social {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.cta-footer__social a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.cta-footer__lead h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: clamp(24px, 3vw, 34px);
+  line-height: 1.15;
+  margin: 0 0 26px;
+}
+
+.cta-footer .btn {
+  background: var(--ink);
+}
+
+.cta-footer__col h4 {
+  font-size: 13px;
+  margin: 0 0 18px;
+  opacity: 0.8;
+}
+
+.cta-footer__col ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 13.5px;
+}
+
+.cta-footer__col a {
+  opacity: 0.85;
+}
+
+.cta-footer__col a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.cta-footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  font-size: 12.5px;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  opacity: 0.85;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cta-footer__legal {
+  display: flex;
+  gap: 18px;
+}
+
+@media (max-width: 900px) {
+  .cta-footer__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

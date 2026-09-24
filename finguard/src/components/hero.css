@@ -1,0 +1,218 @@
+.hero {
+  position: relative;
+  background: var(--ink);
+  color: var(--snow);
+  padding: 150px 0 26px;
+  overflow: visible;
+}
+
+.hero__glow {
+  position: absolute;
+  top: -220px;
+  right: -160px;
+  width: 620px;
+  height: 620px;
+  background: radial-gradient(circle, rgba(255, 77, 31, 0.35), transparent 70%);
+  filter: blur(10px);
+  pointer-events: none;
+}
+
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 40px;
+  align-items: center;
+  position: relative;
+}
+
+.hero__headline {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 0.94;
+  text-transform: uppercase;
+  font-size: clamp(40px, 6.4vw, 84px);
+  margin: 0 0 26px;
+}
+
+.hero__line-wrap {
+  overflow: hidden;
+}
+
+.hero__line {
+  display: block;
+}
+
+.hero__line--accent {
+  color: var(--signal);
+}
+
+.hero__sub {
+  max-width: 420px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.68);
+  margin: 0 0 34px;
+}
+
+.hero__actions {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  flex-wrap: wrap;
+}
+
+.hero__users {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hero__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #38e07a;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.hero__users-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero__users-row strong {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 22px;
+  color: var(--snow);
+}
+
+.hero__avatars {
+  display: flex;
+}
+
+.hero__avatars img {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 2px solid var(--ink);
+  margin-left: -8px;
+  object-fit: cover;
+}
+
+/* card stack — deliberately overflows the hero's bottom edge so the
+   bottom card crosses into the section below, matching the reference. */
+.hero__visual {
+  position: relative;
+  height: 420px;
+  z-index: 3;
+}
+
+.hero__card {
+  position: absolute;
+  width: 240px;
+  height: 150px;
+  border-radius: 18px;
+  top: 330px;
+  left: 50%;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+}
+
+.hero__card--1 {
+  background: linear-gradient(135deg, var(--signal), var(--signal-dim));
+  transform: translate(-72%, 0) rotate(-14deg);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.hero__card-brand {
+  font-family: var(--font-display);
+  font-size: 20px;
+  color: var(--snow);
+}
+
+.hero__chip {
+  width: 34px;
+  height: 24px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.85);
+  align-self: flex-end;
+}
+
+.hero__card--2 {
+  background: #1f2023;
+  transform: translate(-46%, 30px) rotate(4deg);
+  z-index: 2;
+}
+
+.hero__card--3 {
+  background: #232325;
+  transform: translate(-18%, 70px) rotate(18deg);
+  z-index: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 12px;
+}
+
+.hero__card-label {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.hero__card-name {
+  font-size: 13px;
+}
+
+.hero__timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.hero__timeline-item {
+  position: relative;
+  padding-left: 20px;
+  max-width: 190px;
+}
+
+.hero__timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 10px;
+  height: 1px;
+  background: var(--signal);
+}
+
+@media (max-width: 900px) {
+  .hero__inner {
+    grid-template-columns: 1fr;
+  }
+  .hero__visual {
+    height: 360px;
+    margin-top: 40px;
+  }
+  .hero__timeline {
+    display: none;
+  }
+}
